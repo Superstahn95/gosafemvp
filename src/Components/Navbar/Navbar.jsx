@@ -1,7 +1,10 @@
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ user, setUser }) => {
+  const handleLogout = () => {
+    setUser(null);
+  };
   return (
     <div className="nav">
       <div className="nav-logo">GoSafe</div>
@@ -11,17 +14,27 @@ const Navbar = () => {
             Home
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/signup" className="link">
+        {user ? (
+          <button onClick={handleLogout} className="logout-button">
+            Log out
+          </button>
+        ) : (
+          <>
             {" "}
-            Sign up
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/login" className="link">
-            Log in
-          </NavLink>
-        </li>
+            <li>
+              <NavLink to="/signup" className="link">
+                {" "}
+                Sign up
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/login" className="link">
+                Log in
+              </NavLink>
+            </li>
+          </>
+        )}
+
         <NavLink to="/request" className="nav-request">
           Request Service
         </NavLink>

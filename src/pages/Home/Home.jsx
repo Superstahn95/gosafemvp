@@ -7,16 +7,20 @@ function Home({
   heroCount,
   setPlayStatus,
   playStatus,
+  user,
+  setUser,
 }) {
   return (
     <>
-      <Navbar />
+      <Navbar user={user} setUser={setUser} />
       <Hero
         heroCount={heroCount}
         heroData={heroData}
         setHeroCount={setHeroCount}
         playStatus={playStatus}
         setPlayStatus={setPlayStatus}
+        user={user}
+        setUser={setUser}
       />
       <Background playStatus={playStatus} heroCount={heroCount} />
     </>

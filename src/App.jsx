@@ -17,6 +17,7 @@ let heroData = [
 export default function App() {
   const [heroCount, setHeroCount] = useState(0);
   const [playStatus, setPlayStatus] = useState(false);
+  const [user, setUser] = useState(null);
   useEffect(() => {
     //write setInterval code here
   }, []);
@@ -30,16 +31,18 @@ export default function App() {
           playStatus={playStatus}
           setHeroCount={setHeroCount}
           setPlayStatus={setPlayStatus}
+          user={user}
+          setUser={setUser}
         />
       ),
     },
     {
       path: "/signup",
-      element: <Signup />,
+      element: <Signup user={user} setUser={setUser} />,
     },
     {
       path: "/login",
-      element: <Login />,
+      element: <Login user={user} setUser={setUser} />,
     },
     {
       path: "/request",

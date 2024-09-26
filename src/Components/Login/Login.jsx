@@ -1,11 +1,11 @@
 import "./Login.css";
 import { Link } from "react-router-dom";
 
-const LoginForm = () => {
+const LoginForm = ({ setEmail, setPassword, onSubmit, loading }) => {
   return (
     <div className="addUser">
       <h3>Sign in</h3>
-      <form className="addUserForm">
+      <form className="addUserForm" onSubmit={onSubmit}>
         <div className="inputGroup">
           <label htmlFor="email">Email</label>
           <input
@@ -13,6 +13,7 @@ const LoginForm = () => {
             id="email"
             autoComplete="off"
             placeholder="Enter your email"
+            onChange={(e) => setEmail(e.target.value)}
           />
           <label htmlFor="password">Password</label>
           <input
@@ -20,9 +21,10 @@ const LoginForm = () => {
             id="password"
             autoComplete="off"
             placeholder="Enter password"
+            onChange={(e) => setPassword(e.target.value)}
           />
           <button type="submit" className="btn btn-primary">
-            Login
+            {loading ? "Loading...." : "Login"}
           </button>
         </div>
       </form>
