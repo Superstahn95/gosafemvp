@@ -3,6 +3,7 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import RequestService from "./pages/RequestService/RequestService";
+import Search from "./pages/Search/Search";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -43,6 +44,10 @@ export default function App() {
     {
       path: "/request",
       element: <RequestService />,
+    },
+    {
+      path: "/search",
+      element: <Search />,
     },
     {
       path: "*",
