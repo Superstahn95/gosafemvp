@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Hero.css";
 import arrow_btn from "../../assets/arrow_btn.png";
-import play_icon from "../../assets/play_icon.png";
-import pause_icon from "../../assets/pause_icon.png";
+// import play_icon from "../../assets/play_icon.png";
+// import pause_icon from "../../assets/pause_icon.png";
 const Hero = ({
   heroData,
   setHeroCount,
@@ -18,7 +18,7 @@ const Hero = ({
       </div>
       <Link to="/search" className="hero-explore">
         <p>Care to know more about a vehicle??</p>
-        <img src="{arrow_btn}" alt="" />
+        <img src={arrow_btn} alt="" />
       </Link>
       <div className="hero-dot-play">
         <ul className="hero-dots">
