@@ -16,10 +16,10 @@ const Hero = ({
         <p>{heroData.text1}</p>
         <p>{heroData.text2}</p>
       </div>
-      <Link to="/search" className="hero-explore">
+      <div to="/search" className="hero-explore">
         <p>Care to know more about a vehicle??</p>
-        <img src={arrow_btn} alt="" />
-      </Link>
+        <img src="arrow_btn" alt="" />
+      </div>
       <div className="hero-dot-play">
         <ul className="hero-dots">
           <li
